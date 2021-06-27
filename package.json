@@ -1,26 +1,44 @@
 {
-  "name": "@ponday/branch-name",
-  "version": "1.0.0",
+  "name": "@ponday/tabma",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
+  "bin": {
+    "tabma": "dist/index.js"
+  },
   "scripts": {
+    "prepare": "husky install && npm run build:prod",
     "clean": "rimraf dist",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
     "release": "run-s clean build:prod",
     "dev": "ts-node src/index.ts",
     "exec": "node dist/index.js",
-    "start": "run-s build:dev exec"
+    "start": "run-s clean build:dev exec"
   },
   "keywords": [],
   "author": "ponday-dev",
   "license": "ISC",
   "dependencies": {
-    "simple-git": "^2.40.0"
+    "simple-git": "^2.40.0",
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
+    "@types/inquirer": "^7.3.2",
+    "@types/js-yaml": "^4.0.1",
     "@types/node": "^15.12.4",
+    "@types/yargs": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "inquirer": "^8.1.1",
+    "js-yaml": "^4.1.0",
+    "lint-staged": "^11.0.0",
     "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",

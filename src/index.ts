@@ -1,7 +1,3 @@
-import simpleGit from "simple-git";
+import { run } from './commands';
 
-const git = simpleGit();
-
-git.branch(["foo"], (res) => {
-  console.log(res);
-});
+run();
