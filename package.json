@@ -2,19 +2,19 @@
   "name": "@ponday/tabma",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/index.js",
-  "bin": {
-    "tabma": "dist/index.js"
-  },
+  "main": "bin/index.js",
+  "bin": "bin/index.js",
   "scripts": {
-    "prepare": "husky install && npm run build:prod",
-    "clean": "rimraf dist",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run release",
+    "clean:prod": "rimraf bin",
+    "clean:dev": "rimraf dist",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "release": "run-s clean build:prod",
+    "release": "run-s clean:prod build:prod",
     "dev": "ts-node src/index.ts",
-    "exec": "node dist/index.js",
-    "start": "run-s clean build:dev exec"
+    "exec": "node bin/index.js",
+    "start": "run-s clean:dev build:dev exec"
   },
   "keywords": [],
   "author": "ponday-dev",
