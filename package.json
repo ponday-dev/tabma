@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "",
   "main": "bin/index.js",
-  "bin": "node bin/index.js",
+  "bin": "bin/index.js",
   "scripts": {
     "prepare": "husky install",
     "prepublishOnly": "npm run release",
